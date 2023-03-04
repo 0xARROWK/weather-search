@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WeSearch</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- MATERIALIZE -->
+	<link rel="stylesheet" href="./css/materialize.css">
+	<!-- ICONS -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- ADDITIONAL CSS -->
+	<link href="./css/app.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+	<!-- MENU -->
+
+	<nav class="nav-extended nav-bg-top">
+    	<div class="nav-wrapper">
+      		<a href="index.html" class="brand-logo left"><i style="font-size: 2rem !important;">WeSearch</i></a>
+      		<ul id="nav-mobile" class="right">
+				<li><a class="menu-desktop box" href="index.html"><span class="custom-underline active" style="font-size: 1.25rem;">Home</span></a></li>
+				<li><a class="menu-desktop box" href="index.html"><span class="custom-underline" style="font-size: 1.25rem;">Contact</span></a></li>
+				<li><a class="menu-desktop box" href="index.html"><span class="custom-underline" style="font-size: 1.25rem;">Help</span></a></li>
+        		<li><a id="open-sidenav-menu" data-target="sidenav-menu" class="sidenav-trigger"><i class="material-icons">menu</i></a></li>
+      		</ul>
+    	</div>
+  	</nav>
+
+  	<ul id="sidenav-menu" class="sidenav">
+  		<li><a><h4>Menu</h4></a></li>
+		<li><a class="menu-desktop box" href="index.html"><span class="custom-underline active" style="font-size: 1.25rem;">Home</span></a></li>
+		<li><a class="menu-desktop box" href="index.html"><span class="custom-underline" style="font-size: 1.25rem;">Contact</span></a></li>
+		<li><a class="menu-desktop box" href="index.html"><span class="custom-underline" style="font-size: 1.25rem;">Help</span></a></li>
+	</ul>
+
+    <!-- PAGE CONTENT -->
+    
+  	<div class="img-container">
+  		<div class="content">
+
+      		<div class="content-overlay"></div>
+
+      		<div class="content-details fadeIn-bottom">
+
+				<div class="row">
+					<div class="col s12 l8 offset-l2 xl6 offset-xl3">
+
+						<div class="card white">
+							<div class="card-content white-text">
+								<div class="container">
+
+									<div class="row">
+
+										<h5 class="indigo-text col s8 offset-s2 no-padding"><b>Weather Search</b></h5>
+
+										<input id="search-city" class="validate col s8 offset-s2" type="text" placeholder="Search a city">
+
+										<div id="search-weather" class="btn waves-effect waves-light indigo col s8 offset-s2">
+											<i class="material-icons">search</i>
+										</div>
+
+										<p id="error-search" class="col s8 offset-s2 no-padding red-text" style="margin-top: 10px"></p>
+
+										<!-- SEARCH RESULTS -->
+
+										<div id="initial-values" class="indigo-text col s8 offset-s2 no-padding">
+
+											<p><b>Click on items to see details</b></p>
+
+											<div id="show-city-details" class="row mt pointer">
+												<div class="col s6">
+													<p>City</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-city">-</p>
+												</div>
+											</div>
+
+											<div id="show-temperature-details" class="row pointer">
+												<div class="col s6">
+													<p>Temperature</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-temp">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>°C</p>
+												</div>
+											</div>
+
+											<div id="show-wind-details" class="row pointer">
+												<div class="col s6">
+													<p>Pressure</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-pressure">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>hPa</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Sunrise</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-sunrise">-</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Sunset</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-sunset">-</p>
+												</div>
+											</div>
+
+										</div>
+
+										<!-- CITY DETAILS -->
+
+										<div id="city-values" class="hide indigo-text col s8 offset-s2 no-padding">
+
+											<p><b>Click on items to see details</b></p>
+
+											<div class="row mt pointer">
+												<div class="col s6">
+													<p>City</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-city">-</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Longitude</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-longitude">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>°</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Latitude</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-latitude">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>°</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Country code</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-country-code">-</p>
+												</div>
+											</div>
+
+											<span class="go-back pointer">
+												<b>Go back</b>
+											</span>
+
+										</div>
+
+										<!-- TEMPERATURE DETAILS -->
+
+										<div id="temperature-values" class="hide indigo-text col s8 offset-s2 no-padding">
+
+											<p><b>Click on items to see details</b></p>
+
+											<div class="row mt pointer">
+												<div class="col s6">
+													<p>Temperature</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-temp">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>°C</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Feels like</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-feels">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>°C</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Clouds</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-clouds">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>%</p>
+												</div>
+											</div>
+
+											<span class="go-back pointer">
+												<b>Go back</b>
+											</span>
+
+										</div>
+
+										<!-- WIND DETAILS -->
+
+										<div id="wind-values" class="hide indigo-text col s8 offset-s2 no-padding">
+
+											<p><b>Click on items to see details</b></p>
+
+											<div class="row mt pointer">
+												<div class="col s6">
+													<p>Pressure</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-pressure">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>hPa</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Humidity</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-humidity">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>%</p>
+												</div>
+											</div>
+
+											<div class="row pointer">
+												<div class="col s6">
+													<p>Wind speed</p>
+												</div>
+												<div class="col s4 right-align">
+													<p class="results-speed">-</p>
+												</div>
+												<div class="col s2 right-align">
+													<p>km/h</p>
+												</div>
+											</div>
+
+											<span class="go-back pointer">
+												<b>Go back</b>
+											</span>
+
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+
+
+      		</div>
+
+			<!-- FOOTER -->
+
+			<div class="row footer">
+				<div class="col s12 social-network-list">
+					<ul>
+						<li class="item">
+							<a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Ouvrir ma page facebook dans un nouvel onglet" class="facebook"></a>
+						</li>
+						<li class="item">
+							<a href="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Ouvrir ma page twitter dans un nouvel onglet" class="twitter"></a>
+						</li>
+						<li class="item">
+							<a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="Ouvrir ma page linkedin dans un nouvel onglet" class="linkedin"></a>
+						</li>
+						<li class="item">
+							<a href="https://youtube.com" target="_blank" rel="noopener noreferrer" title="Ouvrir ma page youtube dans un nouvel onglet" class="youtube"></a>
+						</li>
+						<li class="item">
+							<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Ouvrir ma page instagram dans un nouvel onglet" class="instagram"></a>
+						</li>
+						<li class="item"><a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" title="Ouvrir ma page pinterest dans un nouvel onglet" class="pinterest"></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+  		</div>
+	</div>
+
+</div>
+
+<!-- JQUERY -->
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<!-- MATERIALIZE -->
+<script src="js/materialize.min.js" type="text/javascript"></script>
+
+
+
+<!-- Code with XMLHttpRequest -->
+<script src="js/xml.js" type="text/javascript"></script>
+<!-- Code with AJAX request -->
+<!--<script src="js/ajax.js" type="text/javascript"></script>-->
+
+</body>
+</html>
